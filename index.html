@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gapush Gupush | From Street Food to Culinary Mastery</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&family=Montserrat:wght@800;900&family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./asset/style.css">
+    
+
+</head>
+
+<body>
+
+    <!-- Modern Header -->
+    <header class="modern-header" id="mainHeader">
+        <!-- Desktop Header -->
+        <div class="d-none d-lg-block">
+            <div class="header-container">
+                <div class="header-left col-lg-5">
+                    <div class="desktop-nav">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#journey">Journey</a>
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#menu" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                                <li><a class="dropdown-item" href="#menu">All Items</a></li>
+                                <li><a class="dropdown-item" href="#menu">Appetizers</a></li>
+                                <li><a class="dropdown-item" href="#menu">Main Course</a></li>
+                                <li><a class="dropdown-item" href="#menu">Desserts</a></li>
+                            </ul>
+                        </div>
+                        <a class="nav-link" href="#price">Price</a>
+                    </div>
+                </div>
+                
+                <div class="header-center col-lg-2">
+                    <div class="desktop-logo">
+                        <div class="loader-logo"><img src="./images/logo.png" alt="Gapush Gupush"></div>
+                    </div>
+                </div>
+                
+                <div class="header-right col-lg-5">
+                    <div class="desktop-nav" style="justify-content: flex-end;">
+                        <a class="nav-link" href="#offers">Offers</a>
+                        <a class="nav-link" href="#customers">Customers</a>
+                        <a class="nav-link" href="#cta">Experience</a>
+                        <a class="nav-link" href="#contact">Contact</a>
+                        <div class="header-actions">
+                            <button class="order-btn" onclick="window.location.href='#contact'">
+                                <i class="fas fa-calendar"></i>
+                                <span>Book Now</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="d-block d-lg-none">
+            <div class="mobile-header">
+                <div class="mobile-logo">
+                    <img src="./images/logo.png" alt="Gapush Gupush">
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="header-actions">
+                        <button class="order-btn" onclick="window.location.href='#contact'">
+                            <i class="fas fa-calendar"></i>
+                        </button>
+                    </div>
+                    <button class="mobile-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Offcanvas Menu -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home" data-bs-dismiss="offcanvas">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#journey" data-bs-dismiss="offcanvas">Journey</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#menu" id="mobileMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu" aria-labelledby="mobileMenuDropdown">
+                            <li><a class="dropdown-item" href="#menu" data-bs-dismiss="offcanvas">All Items</a></li>
+                            <li><a class="dropdown-item" href="#menu" data-bs-dismiss="offcanvas">Appetizers</a></li>
+                            <li><a class="dropdown-item" href="#menu" data-bs-dismiss="offcanvas">Main Course</a></li>
+                            <li><a class="dropdown-item" href="#menu" data-bs-dismiss="offcanvas">Desserts</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#price" data-bs-dismiss="offcanvas">Price</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#offers" data-bs-dismiss="offcanvas">Offers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#customers" data-bs-dismiss="offcanvas">Customers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cta" data-bs-dismiss="offcanvas">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider" id="home">
+        <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Gapush Gupush Burger">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1 class="slide-title">From Street Food to Culinary Mastery</h1>
+                            <div class="slide-subtitle">A Journey of Passion, Innovation & Authentic Taste</div>
+                            <p class="slide-description">
+                                What began as a humble 30৳ burger stall on the streets of Chittagong has evolved into
+                                a premium dining destination.
+                            </p>
+                            <div class="slide-buttons">
+                                <button class="order-btn" onclick="window.location.href='#journey'">
+                                    <i class="fas fa-history"></i>
+                                    <span>Explore Journey</span>
+                                </button>
+                                <button class="order-btn outline" onclick="window.location.href='#contact'">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Book Table</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Cold Coffee">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1 class="slide-title">The 30৳ to 200৳ Evolution</h1>
+                            <div class="slide-subtitle">Quality Transcends Price</div>
+                            <p class="slide-description">
+                                Witness how our signature burger transformed from a simple street snack to a premium
+                                culinary masterpiece.
+                            </p>
+                            <div class="slide-buttons">
+                                <button class="order-btn" onclick="window.location.href='#price'">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Price Evolution</span>
+                                </button>
+                                <button class="order-btn outline" onclick="window.location.href='#menu'">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>View Menu</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-image">
+                        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Restaurant Interior">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1 class="slide-title">Only Cold Coffee is Real</h1>
+                            <div class="slide-subtitle">Facebook Famous, Locally Beloved</div>
+                            <p class="slide-description">
+                                Our legendary cold coffee that took social media by storm. From a simple street drink
+                                to a viral sensation.
+                            </p>
+                            <div class="slide-buttons">
+                                <button class="order-btn" onclick="window.location.href='#menu'">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Try Coffee</span>
+                                </button>
+                                <button class="order-btn outline" onclick="window.location.href='#offers'">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Special Offers</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Premium Journey Section with Vertical Timeline -->
+    <section class="premium-journey section-padding" id="journey">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Our Timeline</span>
+                <h2 class="section-title">Our Journey Through Years</h2>
+                <p class="section-description">
+                    From humble beginnings to industry leadership - our journey of growth, innovation and excellence
+                </p>
+            </div>
+
+            <!-- Animated Stats -->
+            <div class="animated-stats row text-center">
+                <div class="col-12 col-lg-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="8">0</div>
+                        <div class="stat-label">Years of Excellence</div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="1500">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="40">0</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="timeline-section">
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-items">
+                
+
+                        <!-- Timeline Item 2 (Right) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-right">
+                                <div class="timeline-year">2018</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h3 class="timeline-title">Team Grows</h3>
+                                <p class="timeline-text">
+                                    Our active members grew to 20 this year, building a strong foundation for future 
+                                    expansion and excellence.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">Team Growth</span>
+                                    <span class="timeline-badge">20 Members</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 3 (Left) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-left">
+                                <div class="timeline-year">2019</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3 class="timeline-title">Achievement</h3>
+                                <p class="timeline-text">
+                                    Successfully completed 1000 client projects, establishing ourselves as a reliable 
+                                    and trusted partner in the industry.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">1000 Projects</span>
+                                    <span class="timeline-badge">Milestone</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 4 (Right) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-right">
+                                <div class="timeline-year">2020</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 class="timeline-title">Expanding Business</h3>
+                                <p class="timeline-text">
+                                    Diversified our services by including new sectors like Graphic Design and SEO, 
+                                    offering comprehensive solutions to clients.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">Business Expansion</span>
+                                    <span class="timeline-badge">New Services</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 5 (Center - Special) -->
+                        <div class="timeline-item timeline-item-center">
+                            <div class="timeline-content timeline-center">
+                                <div class="timeline-year">2021</div>
+                                <div class="timeline-dot timeline-dot-center"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <h3 class="timeline-title">Started Our Journey</h3>
+                                <p class="timeline-text">
+                                    We started our journey with only 3 people and a big dream, laying the foundation 
+                                    for what would become a remarkable success story.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">Beginning</span>
+                                    <span class="timeline-badge">3 Founders</span>
+                                    <span class="timeline-badge">Big Dream</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 6 (Right) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-left">
+                                <div class="timeline-year">2022</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-code-branch"></i>
+                                </div>
+                                <h3 class="timeline-title">Branch Open</h3>
+                                <p class="timeline-text">
+                                    Opened our first branded branch, expanding our reach and establishing a stronger 
+                                    presence in the market.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">First Branch</span>
+                                    <span class="timeline-badge">Expansion</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 7 (Left) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-right">
+                                <div class="timeline-year">2023</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3 class="timeline-title">Develop Management</h3>
+                                <p class="timeline-text">
+                                    Developed new setup of management and HR systems to support our growing team and 
+                                    ensure operational excellence.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">Management</span>
+                                    <span class="timeline-badge">HR System</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 8 (Right) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-left">
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h3 class="timeline-title">Expansion & Awards</h3>
+                                <p class="timeline-text">
+                                    Team grew to nearly 40 members while working with incredible clients and receiving 
+                                    prestigious industry awards.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">40 Members</span>
+                                    <span class="timeline-badge">Awards</span>
+                                    <span class="timeline-badge">Growth</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Item 9 (Left) -->
+                        <div class="timeline-item">
+                            <div class="timeline-content timeline-right">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h3 class="timeline-title">Achievement</h3>
+                                <p class="timeline-text">
+                                    Completed 1500 client projects, surpassing our goals and solidifying our position 
+                                    as industry leaders.
+                                </p>
+                                <div class="timeline-badges">
+                                    <span class="timeline-badge">1500 Projects</span>
+                                    <span class="timeline-badge">Record</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section section-padding" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Signature Dishes</span>
+                <h2 class="section-title">Premium Menu Collection</h2>
+                <p class="section-description">
+                    Experience our culinary evolution with these signature dishes, each telling a story of our journey
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Menu Item 1 -->
+                <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge">Bestseller</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Original Street Burger" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Street Food Original</span>
+                            <h3 class="menu-card-title">Original Street Burger</h3>
+                            <p class="menu-card-description">
+                                The burger that started it all - simple, delicious, and full of memories.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2">4.7</span>
+                            </div>
+                            <span class="menu-card-price">৳ 200</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge" style="background: var(--gradient-warm);">Viral</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Cold Coffee" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Signature Drink</span>
+                            <h3 class="menu-card-title">Only Cold Coffee is Real</h3>
+                            <p class="menu-card-description">
+                                Our Facebook famous drink - rich, creamy, and perfectly balanced.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2">5.0</span>
+                            </div>
+                            <span class="menu-card-price">৳ 150</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge"
+                            style="background: linear-gradient(135deg, var(--secondary), var(--accent-dark));">Spicy</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Chicken Chap" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Local Specialty</span>
+                            <h3 class="menu-card-title">Spicy Chicken Chap</h3>
+                            <p class="menu-card-description">
+                                Traditional Bangladeshi style chicken with 12 aromatic spices.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2">4.9</span>
+                            </div>
+                            <span class="menu-card-price">৳ 280</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <!-- <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge">New</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Beef BBQ Burger" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Premium Burger</span>
+                            <h3 class="menu-card-title">Beef BBQ Burger</h3>
+                            <p class="menu-card-description">
+                                Juicy beef patty with homemade BBQ sauce and crispy onion rings.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2">4.8</span>
+                            </div>
+                            <span class="menu-card-price">৳ 350</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- Second Row of Menu Items -->
+            <div class="row mt-4">
+                <!-- Menu Item 5 -->
+                <!-- <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge">Traditional</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Beef Tehari" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Local Specialty</span>
+                            <h3 class="menu-card-title">Beef Tehari</h3>
+                            <p class="menu-card-description">
+                                Fragrant rice cooked with tender beef and traditional spices.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2">4.6</span>
+                            </div>
+                            <span class="menu-card-price">৳ 220</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Menu Item 6 -->
+                <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge">Customer Favorite</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Special Burger" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Signature Burger</span>
+                            <h3 class="menu-card-title">Gapush Special Burger</h3>
+                            <p class="menu-card-description">
+                                Signature burger with double patty, special sauce, and secret spices.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2">4.7</span>
+                            </div>
+                            <span class="menu-card-price">৳ 320</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 7 -->
+                <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge">Vegetarian</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Veg Burger" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Vegetarian</span>
+                            <h3 class="menu-card-title">Garden Fresh Burger</h3>
+                            <p class="menu-card-description">
+                                Fresh vegetables, premium cheese, and special veg patty.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2">4.8</span>
+                            </div>
+                            <span class="menu-card-price">৳ 180</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 8 -->
+                <div class="col-12 col-lg-4">
+                    <div class="menu-card">
+                        <div class="menu-card-badge">Premium</div>
+                        <div class="menu-card-img">
+                            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="French Fries" loading="lazy">
+                        </div>
+                        <div class="menu-card-content">
+                            <span class="menu-card-category">Side Dish</span>
+                            <h3 class="menu-card-title">Crispy French Fries</h3>
+                            <p class="menu-card-description">
+                                Golden crispy fries with special seasoning and dips.
+                            </p>
+                            <div class="menu-card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2">4.5</span>
+                            </div>
+                            <span class="menu-card-price">৳ 120</span>
+                            <button class="menu-card-btn">
+                                <i class="fas fa-cart-plus"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Evolution Section -->
+    <section class="price-evolution section-padding" id="price">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Quality Evolution</span>
+                <h2 class="section-title">From 30৳ to 200৳</h2>
+                <p class="section-description">
+                    Our price evolution reflects our commitment to quality, not just inflation.
+                    Every taka increase represents tangible improvements.
+                </p>
+            </div>
+
+            <div class="price-comparison row">
+                <!-- Then Card -->
+                <div class="col-12 col-lg-6">
+                    <div class="price-card price-card-then">
+                        <div class="price-badge">Then (2015)</div>
+                        <h3 class="price-title">Street Food Era</h3>
+                        <div class="price-amount price-then">30৳</div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Basic ingredients</li>
+                            <li><i class="fas fa-check"></i> Street-side service</li>
+                            <li><i class="fas fa-check"></i> Paper wrapping</li>
+                            <li><i class="fas fa-check"></i> Quick preparation</li>
+                            <li><i class="fas fa-check"></i> Cash only</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Now Card -->
+                <div class="col-12 col-lg-6">
+                    <div class="price-card price-card-now">
+                        <div class="price-badge">Now (2025)</div>
+                        <h3 class="price-title">Premium Experience</h3>
+                        <div class="price-amount price-now">200৳</div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Premium organic ingredients</li>
+                            <li><i class="fas fa-check"></i> Fine dining ambiance</li>
+                            <li><i class="fas fa-check"></i> Artisanal presentation</li>
+                            <li><i class="fas fa-check"></i> Professional service</li>
+                            <li><i class="fas fa-check"></i> Multiple payment options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="special-offers section-padding" id="offers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Exclusive Deals</span>
+                <h2 class="section-title">Special Offers</h2>
+                <p class="section-description">
+                    Celebrate our journey with these special offers for our valued customers
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Offer 1 -->
+                <div class="col-12 col-lg-4">
+                    <div class="offer-card">
+                        <div class="offer-badge">Limited Time</div>
+                        <h3 class="offer-title">Street Food Throwback</h3>
+                        <p class="offer-description">
+                            Experience our original street food burger at a special price.
+                        </p>
+                        <div class="offer-price">
+                            <span class="offer-old-price">৳ 200</span>
+                            <span class="offer-new-price">৳ 120</span>
+                        </div>
+                        <button class="menu-card-btn mt-3">
+                            <i class="fas fa-bolt"></i> Grab This Deal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Offer 2 -->
+                <div class="col-12 col-lg-4">
+                    <div class="offer-card">
+                        <div class="offer-badge" style="background: var(--gradient-warm);">Most Popular</div>
+                        <h3 class="offer-title">Burger + Cold Coffee</h3>
+                        <p class="offer-description">
+                            Our famous burger with the viral cold coffee. Perfect combination!
+                        </p>
+                        <div class="offer-price">
+                            <span class="offer-old-price">৳ 350</span>
+                            <span class="offer-new-price">৳ 250</span>
+                        </div>
+                        <button class="menu-card-btn mt-3">
+                            <i class="fas fa-bolt"></i> Grab This Deal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Offer 3 -->
+                <div class="col-12 col-lg-4">
+                    <div class="offer-card">
+                        <div class="offer-badge"
+                            style="background: linear-gradient(135deg, var(--secondary), var(--accent-dark));">Family Pack
+                        </div>
+                        <h3 class="offer-title">Family Feast</h3>
+                        <p class="offer-description">
+                            4 burgers, 4 cold coffees, and large fries. Perfect for family!
+                        </p>
+                        <div class="offer-price">
+                            <span class="offer-old-price">৳ 1,200</span>
+                            <span class="offer-new-price">৳ 899</span>
+                        </div>
+                        <button class="menu-card-btn mt-3">
+                            <i class="fas fa-bolt"></i> Grab This Deal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valuable Customers Section -->
+    <section class="valuable-customers section-padding" id="customers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Customer Love</span>
+                <h2 class="section-title">Valuable Customer of the Week</h2>
+                <p class="section-description">
+                    Each week, we feature one lucky customer who gets exclusive benefits and recognition
+                </p>
+            </div>
+
+            <div class="customer-week">
+                <div class="customer-badge">Customer of the Week</div>
+                <div class="customer-img">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer of the Week" loading="lazy">
+                </div>
+                <h3 class="customer-name">Rahim Khan</h3>
+                <p class="customer-quote">
+                    "I've been eating Gapush Gupush burgers since they were 30৳ on the street. Watching them grow
+                    from a humble stall to a premium restaurant while maintaining their authentic taste has been
+                    incredible. They didn't just increase prices - they elevated the entire experience!"
+                </p>
+
+                <div class="customer-rewards">
+                    <div class="rewards-title">This Week's Exclusive Rewards:</div>
+                    <ul class="rewards-list">
+                        <li><i class="fas fa-gift"></i> 50% discount on all orders</li>
+                        <li><i class="fas fa-crown"></i> Free premium burger every day</li>
+                        <li><i class="fas fa-star"></i> VIP seating in restaurant</li>
+                        <li><i class="fas fa-shipping-fast"></i> Free delivery for entire week</li>
+                        <li><i class="fas fa-user-friends"></i> Bring 2 friends for free</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 btn-container">
+                <button class="order-btn" onclick="window.location.href='#contact'">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Share Your Story & Win</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-padding" id="cta">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="cta-title">Taste The Journey</h2>
+                <p class="cta-description">
+                    From street food stall to premium restaurant - experience the evolution of flavors
+                    that captured the hearts of Chittagong. Book your table now and be part of our story.
+                </p>
+            </div>
+
+            <div class="btn-container">
+                <button class="order-btn" onclick="showNotification('Online ordering coming soon!')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Order Online</span>
+                </button>
+                <button class="order-btn outline" onclick="window.location.href='tel:+8801898922200'">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Call: +880 1898-922200</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="premium-contact section-padding" id="contact">
+        <div class="container">
+            <div class="contact-wrapper row">
+                <!-- Contact Information -->
+                <div class="contact-info col-12 col-lg-6">
+                    <h2 class="contact-title">Reserve Your Experience</h2>
+                    <p class="contact-description">
+                        Join us for an unforgettable culinary journey. Book your table now and experience
+                        the evolution of Bangladeshi street food transformed into fine dining excellence.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>Chittagong, Bangladesh</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Contact Numbers</h4>
+                                <p>+880 1898-922200<br>+880 1996-547457</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>experience@gapushgupush.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Business Hours</h4>
+                                <p>10:00 AM - 12:00 AM<br>7 Days a Week</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modern Contact Form -->
+                <div class="modern-form col-12 col-lg-6">
+                    <h3 class="form-title">Book Your Table</h3>
+                    <form id="reservationForm">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Your Full Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" class="form-input" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="date" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input type="time" class="form-input" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-input" required>
+                                <option value="" disabled selected>Number of Guests</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-input form-textarea"
+                                placeholder="Special Requests (Optional)"></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-calendar-check"></i>
+                            Confirm Reservation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Improved Footer -->
+    <footer class="modern-footer">
+        <div class="container">
+            <div class="footer-content row">
+                <!-- Brand Column -->
+                <div class="footer-logo col-12 col-lg-4">
+                    <div class="footer-brand"><a href="./index.html"><img src="./images/logo.png" alt=""></a></div>
+                    <p class="footer-about">
+                        From street food origins to culinary excellence, we continue to serve authentic
+                        Bangladeshi flavors with innovation and passion. Join us in our journey of taste.
+                    </p>
+
+                    <div class="footer-social">
+                        <a href="#" class="footer-social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="footer-social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-12 col-lg-2">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#journey">Our Journey</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#price">Price Evolution</a></li>
+                        <li><a href="#offers">Special Offers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-12 col-lg-3">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Chittagong, Bangladesh</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+880 1898-922200</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@gapushgupush.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>10 AM - 12 AM Daily</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-12 col-lg-3">
+                    <h4 class="footer-heading">Stay Updated</h4>
+                    <p class="footer-newsletter-text">
+                        Subscribe to our newsletter for exclusive offers and updates
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" class="form-control newsletter-email" placeholder="Your Email">
+                        <button class="menu-card-btn newsletter-subscribe mt-2">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gapush Gupush. All Rights Reserved Shahrear Emon. | Crafted with <i
+                        class="fas fa-heart footer-heart"></i> in Chittagong</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+       <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- custom js -->
+    <script src="./asset/main.js"></script>
+
+</body>
+
+</html>
