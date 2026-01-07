@@ -184,7 +184,7 @@
             justify-content: space-between;
             width: 100%;
             padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.95);
+            background: #fdfedf;
             backdrop-filter: blur(20px);
         }
 
