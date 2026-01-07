@@ -257,13 +257,26 @@
 
             // Back to top button functionality
             const $backToTop = $('#backToTop');
-            $(window).on('scroll.backToTop', function() {
-                if ($(this).scrollTop() > 400) {
+
+            // Show earlier on mobile and ensure visibility updates on resize
+            function updateBackToTopVisibility() {
+                const width = $(window).width();
+                const docHeight = $(document).height();
+                const winHeight = $(window).height();
+                const scrollTop = $(window).scrollTop();
+
+                // Lower threshold for mobile so it appears sooner
+                const threshold = width <= 576 ? 120 : 400;
+
+                // Only show if the page is scrollable and the user scrolled past threshold
+                if (docHeight > winHeight + 50 && scrollTop > threshold) {
                     $backToTop.addClass('show');
                 } else {
                     $backToTop.removeClass('show');
                 }
-            });
+            }
+
+            $(window).on('scroll.backToTop resize.backToTop', updateBackToTopVisibility);
 
             // Smooth scroll to top on click / keyboard
             $('body').on('click', '#backToTop', function() {
@@ -275,9 +288,7 @@
                 }
             });
 
-            // Ensure initial visibility state
-            if ($(window).scrollTop() > 400) {
-                $backToTop.addClass('show');
-            }
+            // Initial check
+            updateBackToTopVisibility();
 
         });
