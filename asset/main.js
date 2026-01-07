@@ -254,4 +254,30 @@
                 const title = card.find('.offer-title').text();
                 showNotification(`Activated offer: ${title}!`);
             });
+
+            // Back to top button functionality
+            const $backToTop = $('#backToTop');
+            $(window).on('scroll.backToTop', function() {
+                if ($(this).scrollTop() > 400) {
+                    $backToTop.addClass('show');
+                } else {
+                    $backToTop.removeClass('show');
+                }
+            });
+
+            // Smooth scroll to top on click / keyboard
+            $('body').on('click', '#backToTop', function() {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+            }).on('keydown', '#backToTop', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    $(this).trigger('click');
+                }
+            });
+
+            // Ensure initial visibility state
+            if ($(window).scrollTop() > 400) {
+                $backToTop.addClass('show');
+            }
+
         });
