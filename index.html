@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,6 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./asset/style.css">
-    
 
 </head>
 
@@ -35,15 +34,17 @@
                     <div class="desktop-nav">
                         <a class="nav-link" href="#home">Home</a>
                         <a class="nav-link" href="#journey">Journey</a>
-                        <div class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#menu" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <a class="nav-link" href="#menu">Menu</a>
+                        <!-- <a class="nav-link dropdown-toggle" href="#menu" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a> -->
+                        <!-- <div class="dropdown">
                             <ul class="dropdown-menu" aria-labelledby="menuDropdown">
                                 <li><a class="dropdown-item" href="#menu">All Items</a></li>
                                 <li><a class="dropdown-item" href="#menu">Appetizers</a></li>
                                 <li><a class="dropdown-item" href="#menu">Main Course</a></li>
                                 <li><a class="dropdown-item" href="#menu">Desserts</a></li>
                             </ul>
-                        </div>
+                        </div> -->
+                        <a class="nav-link" href="#offers">Offers</a>
                         <a class="nav-link" href="#price">Price</a>
                     </div>
                 </div>
@@ -56,11 +57,14 @@
                 
                 <div class="header-right col-lg-5">
                     <div class="desktop-nav" style="justify-content: flex-end;">
-                        <a class="nav-link" href="#offers">Offers</a>
                         <a class="nav-link" href="#customers">Customers</a>
                         <a class="nav-link" href="#cta">Experience</a>
                         <a class="nav-link" href="#contact">Contact</a>
                         <div class="header-actions">
+                            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </button>
                             <button class="order-btn" onclick="window.location.href='#contact'">
                                 <i class="fas fa-calendar"></i>
                                 <span>Book Now</span>
@@ -78,12 +82,16 @@
                     <img src="./images/logo.png" alt="Gapush Gupush">
                 </div>
                 <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
                     <div class="header-actions">
                         <button class="order-btn" onclick="window.location.href='#contact'">
                             <i class="fas fa-calendar"></i>
                         </button>
                     </div>
-                    <button class="mobile-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -116,7 +124,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
                 </ul>
             </div>
-        </div>
+        </div> 
     </header>
 
     <!-- Hero Slider -->
@@ -256,8 +264,6 @@
                     <div class="timeline-line"></div>
 
                     <div class="timeline-items">
-                
-
                         <!-- Timeline Item 2 (Right) -->
                         <div class="timeline-item">
                             <div class="timeline-content timeline-right">
@@ -425,7 +431,7 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
+    <!-- Menu Section with Tabs -->
     <section class="menu-section section-padding" id="menu">
         <div class="container">
             <div class="section-header">
@@ -436,247 +442,432 @@
                 </p>
             </div>
 
-            <div class="row">
-                <!-- Menu Item 1 -->
-                <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge">Bestseller</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Original Street Burger" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Street Food Original</span>
-                            <h3 class="menu-card-title">Original Street Burger</h3>
-                            <p class="menu-card-description">
-                                The burger that started it all - simple, delicious, and full of memories.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2">4.7</span>
-                            </div>
-                            <span class="menu-card-price">৳ 200</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
+            <!-- Tab System -->
+            <div class="menu-tabs-container">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-tab="all">All Items</button>
+                    <button class="menu-tab" data-tab="burgers">Signature Burgers</button>
+                    <button class="menu-tab" data-tab="drinks">Premium Drinks</button>
+                    <button class="menu-tab" data-tab="specialties">Local Specialties</button>
+                    <button class="menu-tab" data-tab="sides">Side Dishes</button>
                 </div>
-
-                <!-- Menu Item 2 -->
-                <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge" style="background: var(--gradient-warm);">Viral</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Cold Coffee" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Signature Drink</span>
-                            <h3 class="menu-card-title">Only Cold Coffee is Real</h3>
-                            <p class="menu-card-description">
-                                Our Facebook famous drink - rich, creamy, and perfectly balanced.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ms-2">5.0</span>
-                            </div>
-                            <span class="menu-card-price">৳ 150</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 3 -->
-                <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge"
-                            style="background: linear-gradient(135deg, var(--secondary), var(--accent-dark));">Spicy</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Chicken Chap" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Local Specialty</span>
-                            <h3 class="menu-card-title">Spicy Chicken Chap</h3>
-                            <p class="menu-card-description">
-                                Traditional Bangladeshi style chicken with 12 aromatic spices.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ms-2">4.9</span>
-                            </div>
-                            <span class="menu-card-price">৳ 280</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Menu Item 4 -->
-                <!-- <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge">New</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Beef BBQ Burger" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Premium Burger</span>
-                            <h3 class="menu-card-title">Beef BBQ Burger</h3>
-                            <p class="menu-card-description">
-                                Juicy beef patty with homemade BBQ sauce and crispy onion rings.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ms-2">4.8</span>
-                            </div>
-                            <span class="menu-card-price">৳ 350</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
             </div>
 
-            <!-- Second Row of Menu Items -->
-            <div class="row mt-4">
-                <!-- Menu Item 5 -->
-                <!-- <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge">Traditional</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Beef Tehari" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Local Specialty</span>
-                            <h3 class="menu-card-title">Beef Tehari</h3>
-                            <p class="menu-card-description">
-                                Fragrant rice cooked with tender beef and traditional spices.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2">4.6</span>
+            <!-- Tab Content - All Items -->
+            <div class="tab-content active" id="tab-all">
+                <div class="row">
+                    <!-- Menu Item 1 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 1;">
+                            <div class="menu-card-badge">Bestseller</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Original Street Burger" loading="lazy">
                             </div>
-                            <span class="menu-card-price">৳ 220</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Street Food Original</span>
+                                <h3 class="menu-card-title">Original Street Burger</h3>
+                                <p class="menu-card-description">
+                                    The burger that started it all - simple, delicious, and full of memories.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.7</span>
+                                </div>
+                                <span class="menu-card-price">৳ 200</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div> -->
 
-                <!-- Menu Item 6 -->
-                <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge">Customer Favorite</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Special Burger" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Signature Burger</span>
-                            <h3 class="menu-card-title">Gapush Special Burger</h3>
-                            <p class="menu-card-description">
-                                Signature burger with double patty, special sauce, and secret spices.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2">4.7</span>
+                    <!-- Menu Item 2 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 2;">
+                            <div class="menu-card-badge" style="background: var(--gradient-warm);">Viral</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Cold Coffee" loading="lazy">
                             </div>
-                            <span class="menu-card-price">৳ 320</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Signature Drink</span>
+                                <h3 class="menu-card-title">Only Cold Coffee is Real</h3>
+                                <p class="menu-card-description">
+                                    Our Facebook famous drink - rich, creamy, and perfectly balanced.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">5.0</span>
+                                </div>
+                                <span class="menu-card-price">৳ 150</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 3 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 3;">
+                            <div class="menu-card-badge"
+                                style="background: linear-gradient(135deg, var(--secondary), var(--accent-dark));">Spicy</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Chicken Chap" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Local Specialty</span>
+                                <h3 class="menu-card-title">Spicy Chicken Chap</h3>
+                                <p class="menu-card-description">
+                                    Traditional Bangladeshi style chicken with 12 aromatic spices.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">4.9</span>
+                                </div>
+                                <span class="menu-card-price">৳ 280</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Menu Item 7 -->
-                <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge">Vegetarian</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Veg Burger" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Vegetarian</span>
-                            <h3 class="menu-card-title">Garden Fresh Burger</h3>
-                            <p class="menu-card-description">
-                                Fresh vegetables, premium cheese, and special veg patty.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ms-2">4.8</span>
+                <!-- Second Row of Menu Items -->
+                <div class="row mt-4">
+                    <!-- Menu Item 4 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 4;">
+                            <div class="menu-card-badge">New</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Beef BBQ Burger" loading="lazy">
                             </div>
-                            <span class="menu-card-price">৳ 180</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Premium Burger</span>
+                                <h3 class="menu-card-title">Beef BBQ Burger</h3>
+                                <p class="menu-card-description">
+                                    Juicy beef patty with homemade BBQ sauce and crispy onion rings.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">4.8</span>
+                                </div>
+                                <span class="menu-card-price">৳ 350</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 5 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 5;">
+                            <div class="menu-card-badge">Traditional</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Beef Tehari" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Local Specialty</span>
+                                <h3 class="menu-card-title">Beef Tehari</h3>
+                                <p class="menu-card-description">
+                                    Fragrant rice cooked with tender beef and traditional spices.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.6</span>
+                                </div>
+                                <span class="menu-card-price">৳ 220</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Item 6 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 6;">
+                            <div class="menu-card-badge">Customer Favorite</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Special Burger" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Signature Burger</span>
+                                <h3 class="menu-card-title">Gapush Special Burger</h3>
+                                <p class="menu-card-description">
+                                    Signature burger with double patty, special sauce, and secret spices.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.7</span>
+                                </div>
+                                <span class="menu-card-price">৳ 320</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Menu Item 8 -->
-                <div class="col-12 col-lg-4">
-                    <div class="menu-card">
-                        <div class="menu-card-badge">Premium</div>
-                        <div class="menu-card-img">
-                            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="French Fries" loading="lazy">
-                        </div>
-                        <div class="menu-card-content">
-                            <span class="menu-card-category">Side Dish</span>
-                            <h3 class="menu-card-title">Crispy French Fries</h3>
-                            <p class="menu-card-description">
-                                Golden crispy fries with special seasoning and dips.
-                            </p>
-                            <div class="menu-card-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2">4.5</span>
+            <!-- Tab Content - Burgers -->
+            <div class="tab-content" id="tab-burgers">
+                <div class="row">
+                    <!-- Burger Item 1 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 1;">
+                            <div class="menu-card-badge">Bestseller</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Original Street Burger" loading="lazy">
                             </div>
-                            <span class="menu-card-price">৳ 120</span>
-                            <button class="menu-card-btn">
-                                <i class="fas fa-cart-plus"></i> Order Now
-                            </button>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Street Food Original</span>
+                                <h3 class="menu-card-title">Original Street Burger</h3>
+                                <p class="menu-card-description">
+                                    The burger that started it all - simple, delicious, and full of memories.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.7</span>
+                                </div>
+                                <span class="menu-card-price">৳ 200</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Burger Item 2 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 2;">
+                            <div class="menu-card-badge">Customer Favorite</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Special Burger" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Signature Burger</span>
+                                <h3 class="menu-card-title">Gapush Special Burger</h3>
+                                <p class="menu-card-description">
+                                    Signature burger with double patty, special sauce, and secret spices.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.7</span>
+                                </div>
+                                <span class="menu-card-price">৳ 320</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Burger Item 3 -->
+                    <div class="col-12 col-lg-4">
+                        <div class="menu-card" style="--card-index: 3;">
+                            <div class="menu-card-badge">New</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Beef BBQ Burger" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Premium Burger</span>
+                                <h3 class="menu-card-title">Beef BBQ Burger</h3>
+                                <p class="menu-card-description">
+                                    Juicy beef patty with homemade BBQ sauce and crispy onion rings.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">4.8</span>
+                                </div>
+                                <span class="menu-card-price">৳ 350</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content - Drinks -->
+            <div class="tab-content" id="tab-drinks">
+                <div class="row justify-content-center">
+                    <!-- Drink Item 1 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="menu-card" style="--card-index: 1;">
+                            <div class="menu-card-badge" style="background: var(--gradient-warm);">Viral</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Cold Coffee" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Signature Drink</span>
+                                <h3 class="menu-card-title">Only Cold Coffee is Real</h3>
+                                <p class="menu-card-description">
+                                    Our Facebook famous drink - rich, creamy, and perfectly balanced.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">5.0</span>
+                                </div>
+                                <span class="menu-card-price">৳ 150</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content - Specialties -->
+            <div class="tab-content" id="tab-specialties">
+                <div class="row">
+                    <!-- Specialty Item 1 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="menu-card" style="--card-index: 1;">
+                            <div class="menu-card-badge"
+                                style="background: linear-gradient(135deg, var(--secondary), var(--accent-dark));">Spicy</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Chicken Chap" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Local Specialty</span>
+                                <h3 class="menu-card-title">Spicy Chicken Chap</h3>
+                                <p class="menu-card-description">
+                                    Traditional Bangladeshi style chicken with 12 aromatic spices.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span class="ms-2">4.9</span>
+                                </div>
+                                <span class="menu-card-price">৳ 280</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialty Item 2 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="menu-card" style="--card-index: 2;">
+                            <div class="menu-card-badge">Traditional</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="Beef Tehari" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Local Specialty</span>
+                                <h3 class="menu-card-title">Beef Tehari</h3>
+                                <p class="menu-card-description">
+                                    Fragrant rice cooked with tender beef and traditional spices.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.6</span>
+                                </div>
+                                <span class="menu-card-price">৳ 220</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content - Sides -->
+            <div class="tab-content" id="tab-sides">
+                <div class="row justify-content-center">
+                    <!-- Side Item 1 -->
+                    <div class="col-12 col-lg-6">
+                        <div class="menu-card" style="--card-index: 1;">
+                            <div class="menu-card-badge">Premium</div>
+                            <div class="menu-card-img">
+                                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                    alt="French Fries" loading="lazy">
+                            </div>
+                            <div class="menu-card-content">
+                                <span class="menu-card-category">Side Dish</span>
+                                <h3 class="menu-card-title">Crispy French Fries</h3>
+                                <p class="menu-card-description">
+                                    Golden crispy fries with special seasoning and dips.
+                                </p>
+                                <div class="menu-card-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2">4.5</span>
+                                </div>
+                                <span class="menu-card-price">৳ 120</span>
+                                <button class="menu-card-btn">
+                                    <i class="fas fa-cart-plus"></i> Order Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
