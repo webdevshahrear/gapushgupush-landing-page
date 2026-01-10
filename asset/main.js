@@ -459,47 +459,127 @@ $(document).ready(function () {
     // Initial check
     updateBackToTopVisibility();
 
-    // Enhanced mobile menu behavior
+    // Enhanced mobile menu behavior - FIXED
     const mobileMenu = document.getElementById('mobileMenu');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     let bsMobileMenu = null;
 
     if (mobileMenu) {
-        // Initialize Bootstrap Offcanvas instance with no-page-scroll option
-        bsMobileMenu = new bootstrap.Offcanvas(mobileMenu, { backdrop: true, scroll: false });
+        // Initialize Bootstrap Offcanvas
+        bsMobileMenu = new bootstrap.Offcanvas(mobileMenu, {
+            backdrop: true,
+            scroll: false,
+            keyboard: true
+        });
 
+        // Toggle menu button
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Toggle menu
+                if (bsMobileMenu) {
+                    bsMobileMenu.toggle();
+                }
+                
+                // Toggle button state
+                this.classList.toggle('is-open');
+                this.setAttribute('aria-expanded', 
+                    this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                );
+                
+                // Prevent rapid clicks
+                this.disabled = true;
+                setTimeout(() => {
+                    this.disabled = false;
+                }, 400);
+            });
+        }
+
+        // Handle menu show event
         mobileMenu.addEventListener('show.bs.offcanvas', function () {
+            // Add class to body
             $('body').addClass('menu-open');
+            
+            // Update button state
             if (mobileMenuBtn) {
                 mobileMenuBtn.classList.add('is-open');
                 mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                mobileMenuBtn.disabled = true; // prevent rapid toggles
             }
-            setTimeout(() => { if (mobileMenuBtn) mobileMenuBtn.disabled = false; }, 400);
+            
+            // Lock body scroll
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
         });
-        
+
+        // Handle menu hide event
         mobileMenu.addEventListener('hide.bs.offcanvas', function () {
+            // Remove class from body
             $('body').removeClass('menu-open');
+            
+            // Update button state
             if (mobileMenuBtn) {
                 mobileMenuBtn.classList.remove('is-open');
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.disabled = true; // prevent rapid toggles
             }
-            setTimeout(() => { if (mobileMenuBtn) mobileMenuBtn.disabled = false; }, 400);
+            
+            // Unlock body scroll
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        });
+
+        // Close menu when clicking on links
+        $('.offcanvas .nav-link, .offcanvas .dropdown-item').on('click', function(e) {
+            if (bsMobileMenu) {
+                // Small delay for smooth transition
+                setTimeout(() => {
+                    bsMobileMenu.hide();
+                }, 300);
+            }
+        });
+
+        // Handle escape key to close menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && bsMobileMenu && mobileMenu.classList.contains('show')) {
+                bsMobileMenu.hide();
+            }
         });
     }
 
-    // Attach explicit toggle to hamburger button for reliable behavior
-    if (mobileMenuBtn && bsMobileMenu) {
-        mobileMenuBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            bsMobileMenu.toggle();
+    // Fix for dropdowns in mobile menu
+    $('.offcanvas .dropdown-toggle').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const $this = $(this);
+        const $dropdownMenu = $this.next('.dropdown-menu');
+        
+        // Close other open dropdowns
+        $('.offcanvas .dropdown-menu').not($dropdownMenu).removeClass('show');
+        
+        // Toggle current dropdown
+        $dropdownMenu.toggleClass('show');
+        
+        // Update aria-expanded
+        const isExpanded = $dropdownMenu.hasClass('show');
+        $this.attr('aria-expanded', isExpanded);
+        
+        // Close dropdown when clicking outside
+        $(document).on('click.menu-dropdown', function(event) {
+            if (!$(event.target).closest('.dropdown').length) {
+                $dropdownMenu.removeClass('show');
+                $this.attr('aria-expanded', 'false');
+                $(document).off('click.menu-dropdown');
+            }
         });
-    }
+    });
 
-    // Add smooth scrolling for mobile menu links (and close offcanvas)
-    $('.offcanvas .nav-link').click(function() {
-        if (bsMobileMenu) bsMobileMenu.hide();
+    // Fix for mobile menu closing on backdrop click
+    $('.offcanvas-backdrop').on('click', function() {
+        if (bsMobileMenu) {
+            bsMobileMenu.hide();
+        }
     });
 
     // Window resize handler for responsive adjustments
