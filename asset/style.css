@@ -1741,6 +1741,7 @@ html.menu-open {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .footer-links li {
@@ -1778,6 +1779,9 @@ html.menu-open {
     color: var(--secondary-light);
     width: 20px;
     font-size: 1rem;
+}
+.newsletter{
+    text-align: center;
 }
 
 .footer-newsletter-text {
@@ -2242,6 +2246,7 @@ body.menu-open {
 .col-12, .col-md-6, .col-lg-3, .col-md-4 {
     padding-right: 15px;
     padding-left: 15px;
+    margin-bottom: 10px;
 }
 
 .menu-card .menu-card-btn {
@@ -2311,7 +2316,7 @@ body.menu-open {
     
     /* Fix hero section margin for mobile */
     .hero-slider {
-        margin-top: 70px !important;
+        margin-top: 40px !important;
         height: 85vh !important;
     }
     
