@@ -1,9 +1,12 @@
 $(document).ready(function () {
-    // Hide loader after full page load (keep visible until resources are ready)
+    // Hide loader after full page load (fade out smoothly, then hide)
     $(window).on('load', function() {
+        // trigger CSS fade and move
+        $('#loader').addClass('fade-out');
+        // after fade completes, mark hidden to remove from accessibility/interaction
         setTimeout(function() {
             $('#loader').addClass('hidden');
-        }, 300);
+        }, 800);
     });
 
     // Theme Toggle Functionality
