@@ -1,12 +1,30 @@
 $(document).ready(function () {
-    // Hide loader after full page load (fade out smoothly, then hide)
+    // Disable preloader on small/mobile screens
+    const isMobileDevice = window.matchMedia('(max-width: 768px)').matches || /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    if (isMobileDevice) {
+        $('#loader').addClass('hidden');
+        window.__loaderDisabledForMobile = true;
+    }
+
+    // Mark when loader was shown so we can enforce minimum display time
+    window.__loaderShownAt = window.__loaderShownAt || performance.now();
+    const MIN_LOADER_MS = 2000; // minimum loader visible time in milliseconds
+
+    // Hide loader after full page load (ensure minimum display time of 2s, fade out smoothly, then hide)
     $(window).on('load', function() {
-        // trigger CSS fade and move
-        $('#loader').addClass('fade-out');
-        // after fade completes, mark hidden to remove from accessibility/interaction
+        // If preloader was disabled for mobile, do nothing
+        if (window.__loaderDisabledForMobile) return;
+
+        const elapsed = performance.now() - (window.__loaderShownAt || 0);
+        const remaining = Math.max(0, MIN_LOADER_MS - elapsed);
+
         setTimeout(function() {
-            $('#loader').addClass('hidden');
-        }, 800);
+            $('#loader').addClass('fade-out');
+            // after fade completes, mark hidden to remove from accessibility/interaction
+            setTimeout(function() {
+                $('#loader').addClass('hidden');
+            }, 800);
+        }, remaining);
     });
 
     // Theme Toggle Functionality
