@@ -1822,10 +1822,10 @@ html.menu-open {
 
 .footer-heading {
     color: var(--text-dark);
-    font-size: 1.2rem;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 10px;
+    font-size: 17px !important;
 }
 
 .footer-heading::after {
