@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    // Hide loader
-    setTimeout(() => {
-        $('#loader').addClass('hidden');
-    }, 1000);
+    // Hide loader after full page load (keep visible until resources are ready)
+    $(window).on('load', function() {
+        setTimeout(function() {
+            $('#loader').addClass('hidden');
+        }, 300);
+    });
 
     // Theme Toggle Functionality
     const themeToggle = $('#themeToggle, #themeToggleMobile');
