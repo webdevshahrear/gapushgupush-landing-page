@@ -945,7 +945,7 @@ html.menu-open {
     box-shadow: 0 8px 24px rgba(230,57,70,0.18) !important;
 }
 
-..menu-tab:focus-visible {
+.menu-tab:focus-visible {
     box-shadow: 0 0 0 3px rgba(230,57,70,0.12);
 }
 
@@ -2388,6 +2388,7 @@ body.menu-open {
     .offcanvas {
         width: 320px;
         max-width: 85%;
+        height: 100vh;
         background: var(--glass-bg) !important;
         backdrop-filter: blur(30px) !important;
         -webkit-backdrop-filter: blur(30px) !important;
